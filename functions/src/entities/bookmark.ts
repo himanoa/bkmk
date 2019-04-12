@@ -13,21 +13,21 @@ export interface InputBookMark {
   comment: string | null
 }
 
-export function parseInput(obj: Object): InputBookMark {
+export function parseInput(obj: Object): Promise<InputBookMark> {
   const schema: yup.Schema<InputBookMark> = yup.object().shape({
-    url: yup.string().url(),
-    bodyHtml: yup.string(),
-    comment: yup.string().nullable()
+    url: yup.string().url().required(),
+    bodyHtml: yup.string().required(),
+    comment: yup.string().nullable().required()
   })
-  return schema.validateSync(obj)
+  return schema.validate(obj)
 }
 
-export function parse(obj: Object): Bookmark {
+export function parse(obj: Object): Promise<Bookmark> {
   const schema: yup.Schema<Bookmark> = yup.object().shape({
     id: yup.string().required(),
-    url: yup.string().url(),
-    bodyHtml: yup.string(),
-    comment: yup.string().nullable()
+    url: yup.string().url().required(),
+    bodyHtml: yup.string().required(),
+    comment: yup.string().nullable().required()
   })
-  return schema.validateSync(obj)
+  return schema.validate(obj)
 }

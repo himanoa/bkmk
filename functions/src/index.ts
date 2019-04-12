@@ -2,8 +2,19 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 import * as Express from 'express';
 import { applyRouter } from "./routes";
+import * as bodyParser from "body-parser";
 
-const app = applyRouter(Express())
+const middlewares = [
+  bodyParser.json()
+]
+
+const app = applyRouter(
+  middlewares.reduce(
+    (app: Express.Application, middleware) => app.use(middleware),
+    Express()
+  )
+)
+
 admin.initializeApp()
 
 // Start writing Firebase Functions
