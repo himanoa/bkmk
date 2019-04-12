@@ -6,6 +6,7 @@ import * as admin from 'firebase-admin';
 
 export const helloWorld = functions.https.onRequest(async (request, response) => {
   try {
+    admin.initializeApp()
     await admin.firestore().collection('test').add({test: 1})
     response.sendStatus(200)
   } catch (err) {
