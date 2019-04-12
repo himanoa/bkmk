@@ -1,9 +1,10 @@
 import * as functions from 'firebase-functions';
-// import * as admin from 'firebase-admin';
+import * as admin from 'firebase-admin';
 import * as Express from 'express';
 import { applyRouter } from "./routes";
 
 const app = applyRouter(Express())
+admin.initializeApp()
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
