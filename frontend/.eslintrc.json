@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "@typescript-eslint/recommended",
+    "react-hooks"
+  ],
+  "extends": [
+    "prettier"
+  ]
+}
