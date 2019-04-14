@@ -1,18 +1,15 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "ES2015",
     "strict": true,
-    "esModuleInterop": true,
     "jsx": "react",
     "types": ["jest"],
     "lib": ["dom", "esnext"]
   },
   "include": [
     "src/**/*"
-    ],
+  ],
   "exclude": [
-    "node_modules",
     "**/*.spec.ts"
   ]
 }
