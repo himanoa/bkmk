@@ -23,7 +23,9 @@
     "@types/react-dom": "^16.8.4",
     "firebase": "^5.9.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-ioc": "^1.0.0",
+    "redux-aggregate": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
