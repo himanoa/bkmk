@@ -4,7 +4,8 @@
     "strict": true,
     "jsx": "react",
     "types": ["jest"],
-    "lib": ["dom", "esnext"]
+    "lib": ["dom", "esnext"],
+    "experimentalDecorators": true
   },
   "include": [
     "src/**/*"
