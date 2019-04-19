@@ -27,31 +27,27 @@ const fetchErrorHandler = (response: Response) => {
 }
 
 router.get("/", async (req, res) => {
-  parseInput(req.params)
-    .then(ih => fetch(ih.url))
-    .then(fRes => {
-      if(!fRes.ok) {
-        fetchErrorHandler(fRes)
-      }
-      return fRes.text()
+  try {
+    const params = await parseInput(req.params)
+    const fRes = await fetch(params.url)
+    if(!fRes.ok) {
+      throw new FetchError(fRes.status, fRes.url)
+    }
+    const { window: win } = new JSDOM(await fRes.text())
+    const title = win.document.querySelector("title")
+    res.status(200).json({
+      title: title ? title: ""
     })
-    .then(body => {
-      const { window: win } = new JSDOM(body)
-      const title = win.document.querySelector("title")
-      if(title) {
-        res.status(200).json({title: title.text})
-      }
-    })
-    .catch(err => {
-      if(err instanceof yup.ValidationError) {
-        res.status(400).json(err)
-      } else {
-        res.sendStatus
-      }
-    })
+  } catch(err) {
+    if(err instanceof yup.ValidationError) {
+      res.status(400).json(err)
+    } else {
+      res.sendStatus
+    }
+  }
 })
 
 export default {
-  path: "/getUrl",
+  path: "/gethtml",
   router
 }

@@ -5,7 +5,8 @@ import getHtml from "./get-html"
 const router = Express.Router();
 
 router.get("/health", async (req, res) => {
-  res.send("live!");
+  console.dir(router)
+  res.status(200).json(router);
 });
 
 const endPoints = [

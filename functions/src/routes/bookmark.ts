@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
 
 router.get('/', async(req, res) => {
   await admin.firestore().collection('bookmark')
+  res.status(200)
 })
 
 
