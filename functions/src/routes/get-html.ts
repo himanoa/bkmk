@@ -28,15 +28,14 @@ const fetchErrorHandler = (response: Response) => {
 
 router.get("/", async (req, res) => {
   try {
-    const params = await parseInput(req.params)
+    const params = await parseInput(req.query)
     const fRes = await fetch(params.url)
     if(!fRes.ok) {
       throw new FetchError(fRes.status, fRes.url)
     }
     const { window: win } = new JSDOM(await fRes.text())
-    const title = win.document.querySelector("title")
     res.status(200).json({
-      title: title ? title: ""
+      title: win.document.title
     })
   } catch(err) {
     if(err instanceof yup.ValidationError) {
