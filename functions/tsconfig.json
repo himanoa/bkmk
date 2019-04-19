@@ -1,15 +1,29 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "target": "esnext",
     "module": "commonjs",
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "outDir": "lib",
-    "sourceMap": true,
     "strict": true,
-    "target": "es2015"
+    "jsx": "react",
+    "types": ["jest"],
+    "lib": ["dom", "esnext"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "typeRoots": ["types", "node_modules/@types"],
+    "types": [],
+    "paths": {}
   },
-  "compileOnSave": true,
   "include": [
-    "src"
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
   ]
 }

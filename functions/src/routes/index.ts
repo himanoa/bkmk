@@ -1,5 +1,6 @@
 import * as Express from "express";
 import bookmark from "./bookmark"
+import getHtml from "./get-html"
 
 const router = Express.Router();
 
@@ -9,6 +10,7 @@ router.get("/health", async (req, res) => {
 
 const endPoints = [
   bookmark,
+  getHtml,
   { path: "/", router }
 ];
 
