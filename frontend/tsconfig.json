@@ -1,12 +1,23 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "esnext",
     "strict": true,
     "jsx": "react",
     "types": ["jest"],
     "lib": ["dom", "esnext"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "typeRoots": ["types", "node_modules/@types"],
+    "types": [],
+    "paths": {}
   },
   "include": [
     "src/**/*"
