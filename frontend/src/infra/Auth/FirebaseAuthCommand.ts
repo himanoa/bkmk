@@ -18,7 +18,6 @@ export class FirebaseAuthCommand extends AuthCommand {
   public firebaseProvider: firebase.auth.AuthProvider;
   public auth: firebase.auth.Auth;
 
-  private author: AuthUser | null = null;
   constructor(
     @inject(symbols.firebaseAuthProvider)
     firebaseProvider: firebase.auth.AuthProvider,
@@ -27,12 +26,6 @@ export class FirebaseAuthCommand extends AuthCommand {
     super();
     this.firebaseProvider = firebaseProvider;
     this.auth = auth;
-
-    this.auth.onAuthStateChanged(user => {
-      if (user) {
-        this.author = { uid: user.uid };
-      }
-    });
   }
 
   async login() {
@@ -41,13 +34,5 @@ export class FirebaseAuthCommand extends AuthCommand {
 
   async logout() {
     this.auth.signOut();
-  }
-
-  async currentLoggedInUser() {
-    if (this.author) {
-      return this.author;
-    } else {
-      throw NotLoggedInError;
-    }
   }
 }
