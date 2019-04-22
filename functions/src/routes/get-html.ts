@@ -3,6 +3,7 @@ import * as Express from "express"
 import fetch from "node-fetch"
 import { Response } from "node-fetch"
 import { JSDOM } from "jsdom";
+import { DOMWindow } from "jsdom";
 
 export interface InputHtml {
   url: string;
@@ -14,7 +15,6 @@ export function parseInput(obj: Object): Promise<InputHtml> {
   })
   return schema.validate(obj)
 }
-
 
 const router = Express.Router()
 class FetchError {
@@ -34,14 +34,21 @@ router.get("/", async (req, res) => {
       throw new FetchError(fRes.status, fRes.url)
     }
     const { window: win } = new JSDOM(await fRes.text())
+    const blackListTag = ["script", "link", "style"]
+    Array.from(win.document.querySelectorAll(blackListTag.join(','))).forEach(elm => {
+      if(elm.parentElement) {
+        elm.parentElement.removeChild(elm)
+      }
+    })
     res.status(200).json({
-      title: win.document.title
+      title: win.document.title,
+      body: win.document.body.innerHTML
     })
   } catch(err) {
     if(err instanceof yup.ValidationError) {
       res.status(400).json(err)
     } else {
-      res.sendStatus
+      res.status(500).json(err)
     }
   }
 })
