@@ -4,6 +4,7 @@ export interface Bookmark {
   id: string;
   url: string;
   bodyHtml: string;
+  bodyText: string;
   comment: string | null;
 }
 
@@ -27,6 +28,7 @@ export function parse(obj: Object): Promise<Bookmark> {
     id: yup.string().required(),
     url: yup.string().url().required(),
     bodyHtml: yup.string().required(),
+    bodyText: yup.string().required(),
     comment: yup.string().nullable().required()
   })
   return schema.validate(obj)
