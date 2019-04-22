@@ -1,7 +1,8 @@
 import { ContainerModule, decorate, injectable } from "inversify";
 import * as firebase from "firebase";
+import firebaseConfig from "../../../config/firebase.config";
 
-const app = firebase.initializeApp({});
+const app = firebase.initializeApp(firebaseConfig);
 export const symbols = {
   firebaseApp: Symbol.for("firebaseApp"),
   firebaseAuthProvider: Symbol.for("firebaseAuthProvider"),
