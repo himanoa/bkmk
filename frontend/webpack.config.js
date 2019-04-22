@@ -11,15 +11,18 @@ module.exports = {
     filename: "bundle.js",
     path: contentBase
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
+  },
   module: {
     rules: [
       {
-        test: /\.ts?x$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "ts-loader",
           options: {
-            configFile: "tsconfig.json"
+            configFile: path.resolve("", "tsconfig.json")
           }
         }
       }
