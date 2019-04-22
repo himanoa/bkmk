@@ -1,8 +1,8 @@
 import { ContainerModule } from "inversify";
 import { config } from "../../container.config";
-import { AuthService } from "../../domain/Auth/AuthService";
-import { FirebaseAuthService } from "./FirebaseAuthService";
+import { AuthCommand } from "../../domain/Auth/AuthCommand";
+import { FirebaseAuthCommand } from "./FirebaseAuthCommand";
 
 export default new ContainerModule(bind => {
-  bind<AuthService>(AuthService).to(FirebaseAuthService);
+  bind<AuthCommand>(AuthCommand).to(FirebaseAuthCommand);
 });

@@ -4,10 +4,10 @@ import "reflect-metadata";
 import { useInjection, InjectableProps } from "react-injection";
 
 import containerContext from "./container";
-import { AuthService } from "./domain/Auth/AuthService";
+import { AuthCommand } from "./domain/Auth/AuthCommand";
 
-const deps: InjectableProps<{ authService: AuthService }> = {
-  authService: AuthService
+const deps: InjectableProps<{ authService: AuthCommand }> = {
+  authService: AuthCommand
 };
 function App() {
   const { authService } = useInjection(containerContext, deps);

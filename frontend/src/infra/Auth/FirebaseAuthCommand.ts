@@ -1,7 +1,7 @@
 import { injectable, inject } from "inversify";
 import * as firebase from "firebase";
 
-import { AuthService } from "../../domain/Auth/AuthService";
+import { AuthCommand } from "../../domain/Auth/AuthCommand";
 import { AuthUser } from "../../domain/Auth/AuthUser";
 
 import { symbols } from "../Firebase/container";
@@ -14,7 +14,7 @@ export class NotLoggedInError extends Error {
 }
 
 @injectable()
-export class FirebaseAuthService extends AuthService {
+export class FirebaseAuthCommand extends AuthCommand {
   public firebaseProvider: firebase.auth.AuthProvider;
   public auth: firebase.auth.Auth;
 
