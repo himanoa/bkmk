@@ -42,7 +42,8 @@ router.get("/", async (req, res) => {
     })
     res.status(200).json({
       title: win.document.title,
-      body: win.document.body.innerHTML
+      body: win.document.body.innerHTML,
+      text: win.document.body.innerText
     })
   } catch(err) {
     if(err instanceof yup.ValidationError) {
