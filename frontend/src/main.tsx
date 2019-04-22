@@ -11,10 +11,11 @@ const deps: InjectableProps<{ authService: AuthCommand }> = {
 };
 function App() {
   const { authService } = useInjection(containerContext, deps);
+  return <h1>Hello</h1>;
 }
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("app");
   if (root) {
-    ReactDOM.render(<h1>HelloWorld</h1>, root);
+    ReactDOM.render(<App />, root);
   }
 });

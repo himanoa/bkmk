@@ -1,5 +1,6 @@
 import { injectable, inject } from "inversify";
-import * as firebase from "firebase";
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
 import { AuthCommand } from "../../domain/Auth/AuthCommand";
 import { AuthUser } from "../../domain/Auth/AuthUser";

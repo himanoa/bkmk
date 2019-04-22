@@ -1,10 +1,13 @@
 import { Container } from "inversify";
-import auth from "./infra/Auth/container";
-import firebase from "./infra/Firebase/container";
 import { InjectableProps, StateTracker } from "react-injection";
 import { createContext, useContext } from "react";
 
-const container = new Container();
+import { config } from "./container.config";
+
+import auth from "./infra/Auth/container";
+import firebase from "./infra/Firebase/container";
+
+const container = new Container(config);
 container.load(auth, firebase);
 
 StateTracker.bindToContainer(container);

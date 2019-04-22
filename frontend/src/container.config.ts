@@ -1,3 +1,4 @@
 export const config = {
-  autoBindInjectable: true
+  autoBindInjectable: true,
+  skipBaseClassChecks: true
 };
