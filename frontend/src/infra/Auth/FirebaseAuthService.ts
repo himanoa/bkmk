@@ -1,7 +1,10 @@
-import { injectable } from "inversify";
+import { injectable, inject } from "inversify";
+import * as firebase from "firebase";
+
 import { AuthService } from "../../domain/Auth/AuthService";
 import { AuthUser } from "../../domain/Auth/AuthUser";
-import * as firebase from "firebase";
+
+import { symbols } from "../Firebase/container";
 
 export class NotLoggedInError extends Error {
   constructor() {
@@ -17,8 +20,9 @@ export class FirebaseAuthService extends AuthService {
 
   private author: AuthUser | null = null;
   constructor(
+    @inject(symbols.firebaseAuthProvider)
     firebaseProvider: firebase.auth.AuthProvider,
-    auth: firebase.auth.Auth
+    @inject(symbols.firebaseAuth) auth: firebase.auth.Auth
   ) {
     super();
     this.firebaseProvider = firebaseProvider;

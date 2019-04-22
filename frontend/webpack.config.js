@@ -1,7 +1,8 @@
-const path = require('path')
+const path = require("path");
 
-const env = process.env.NODE_ENV === 'production' ? 'production' : "development"
-const contentBase = path.resolve(path.join('..', 'public'))
+const env =
+  process.env.NODE_ENV === "production" ? "production" : "development";
+const contentBase = path.resolve(path.join("..", "public"));
 
 module.exports = {
   mode: env,
@@ -11,17 +12,22 @@ module.exports = {
     path: contentBase
   },
   module: {
-    rules: [{
-      test: /\.ts?x$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'ts-loader'
+    rules: [
+      {
+        test: /\.ts?x$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "ts-loader",
+          options: {
+            configFile: "tsconfig.json"
+          }
+        }
       }
-    }]
+    ]
   },
   devServer: {
     contentBase,
     watchContentBase: true
   },
-  devtool: "source-map",
-}
+  devtool: "source-map"
+};
