@@ -6,7 +6,6 @@ import { createContext, useContext } from "react";
 
 const container = new Container();
 container.load(auth, firebase);
-container.getAllNamed;
 
 StateTracker.bindToContainer(container);
 const context = createContext(container);
