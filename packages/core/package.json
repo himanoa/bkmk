@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc --module es2015"
+    "build": "tsc --module es2015",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/himanoa/bkmk/issues"
