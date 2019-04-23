@@ -14,6 +14,7 @@
     "build:prod": "NODE_ENV=production webpack"
   },
   "dependencies": {
+    "@bkmk/core": "^0.0.0",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "firebase": "^5.10.0",
