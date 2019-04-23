@@ -26,5 +26,8 @@
   },
   "bugs": {
     "url": "https://github.com/himanoa/bkmk/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11"
   }
 }
