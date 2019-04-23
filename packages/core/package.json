@@ -21,9 +21,14 @@
     "url": "git+https://github.com/himanoa/bkmk.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/himanoa/bkmk/issues"
+  },
+  "devDependencies": {
+    "rollup": "^1.10.1",
+    "rollup-plugin-typescript2": "^0.20.1"
   }
 }
