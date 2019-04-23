@@ -2,23 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "esnext",
-    "strict": true,
-    "jsx": "react",
-    "types": ["jest"],
-    "lib": ["dom", "esnext"],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "typeRoots": ["types", "node_modules/@types"],
-    "types": []
+    "declaration": false
   },
   "include": [
     "src/**/*"
