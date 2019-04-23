@@ -1,8 +1,10 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@bkmk/frontend",
+  "version": "0.0.0",
+  "description": "bkmk web browser client",
+  "author": "himanoa <matsunoappy@gmail.com>",
+  "homepage": "https://github.com/himanoa/bkmk/tree/master/packages/frontend#readme",
+  "license": "MIT",
   "scripts": {
     "test": "jest",
     "prettier": "prettier --write src/**/*.ts src/*.ts",
@@ -11,13 +13,8 @@
     "build": "webpack",
     "build:prod": "NODE_ENV=production webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "../.git"
-  },
-  "author": "himanoa <matsunoappy@gmail.com>",
-  "license": "MIT",
   "dependencies": {
+    "@bkmk/core": "^0.0.0",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "firebase": "^5.10.0",
@@ -46,5 +43,15 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanoa/bkmk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/himanoa/bkmk/issues"
   }
 }

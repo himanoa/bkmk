@@ -1,0 +1,23 @@
+{
+  "name": "bkmk",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "lerna": "^3.13.3",
+    "jest": "^24.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanoa/bkmk.git"
+  },
+  "author": "himanoa <matsunoappy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/himanoa/bkmk/issues"
+  },
+  "homepage": "https://github.com/himanoa/bkmk#readme"
+}

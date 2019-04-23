@@ -63,3 +63,14 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+**/node_modules
+**/*.js
+**/*.js.map
+
+# Typescript v1 declaration files
+**/typings/
+**/lib/
+
+**/node_modules/
+**/public/

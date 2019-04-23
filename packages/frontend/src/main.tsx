@@ -4,7 +4,7 @@ import "reflect-metadata";
 import { useInjection, InjectableProps } from "react-injection";
 
 import containerContext from "./container";
-import { AuthCommand } from "./domain/Auth/AuthCommand";
+import { AuthCommand } from "@bkmk/core";
 
 const deps: InjectableProps<{ authService: AuthCommand }> = {
   authService: AuthCommand
