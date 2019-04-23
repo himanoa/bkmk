@@ -12,6 +12,9 @@
     "esModuleInterop": true,
     "noImplicitAny": false,
     "noImplicitReturns": false,
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
     "lib": [
       "esnext",
       "dom"
