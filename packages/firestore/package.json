@@ -20,7 +20,7 @@
     "url": "git+https://github.com/himanoa/bkmk.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "firebase serve --only firestore & (sleep 10 && jest & wait; (pgrep -fl firestore | grep java | awk '{ print $1 }' | xargs kill -9))"
   },
   "bugs": {
     "url": "https://github.com/himanoa/bkmk/issues"
