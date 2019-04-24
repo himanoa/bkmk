@@ -1,7 +1,7 @@
 import * as faker from "faker"
 import * as firebase from "@firebase/testing"
 
-export default function(overwrite) {
+export default function(overwrite?) {
   return {
     url: faker.internet.url(),
     bodyHtml: faker.lorem.text(),

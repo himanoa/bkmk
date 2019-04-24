@@ -10,36 +10,44 @@ import {
 
 import bookmarkFixture from "../utils/bookmark"
 
-const projectId= 'firestore-emulator-example-' + Date.now();
+const projectId = 'firestore-emulator-example-' + Date.now();
 
 const authorized = initializeTestApp({
   projectId,
   auth: { uid: "alice", email: "example@example.com" }
-}).firestore()
+})
 
 const nonAuthorized = initializeTestApp({
   projectId
-}).firestore()
+})
 
-beforeAll(async() => {
+const authorizedStore = authorized.firestore()
+const nonAuthorizedStore = nonAuthorized.firestore()
+
+beforeAll(async(done) => {
   await loadFirestoreRules({
     projectId,
     rules: fs.readFileSync(path.resolve(__dirname, "..", "firestore.rules"), "utf-8")
   })
+  done()
 })
 
-beforeEach(async () => {
-  await clearFirestoreData({
+afterAll(async () => {
+  return Promise.all([authorized.delete(), nonAuthorized.delete()])
+})
+
+beforeEach((done) => {
+  clearFirestoreData({
     projectId
   })
+  done()
 })
 
 describe("bookmarks", () => {
-  it("should be create bookmark", async () => {
-    await assertSucceeds(authorized.collection("bookmarks").add(bookmarkFixture))
+  it("should be create bookmark", async (done) => {
+    await assertSucceeds(
+      authorizedStore.collection("bookmarks").add(bookmarkFixture())
+    )
+    done()
   })
-})
-
-test("should be valid", () => {
-  expect(1).toBe(2)
 })
