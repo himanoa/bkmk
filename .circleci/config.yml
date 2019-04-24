@@ -41,9 +41,7 @@ jobs:
           command: java -jar /usr/local/lib/cloud-firestore-emulator.jar --host=127.0.0.1
           background: true
       - run:
-          command: |
-            cd packages/firestore
-            npm run test:firestore
+          command: "npx lerna run test:middle"
 workflows:
   check:
     jobs:
