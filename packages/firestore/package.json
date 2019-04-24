@@ -20,7 +20,7 @@
     "url": "git+https://github.com/himanoa/bkmk.git"
   },
   "scripts": {
-    "test": "jest",
+    "test:firestore": "jest",
     "test:watch": "jest --watch"
   },
   "bugs": {

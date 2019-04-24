@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
+    "jest": "^24.7.1",
     "lerna": "^3.13.3",
-    "jest": "^24.7.1"
+    "prettier": "^1.17.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

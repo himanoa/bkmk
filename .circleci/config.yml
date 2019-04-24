@@ -1,0 +1,51 @@
+version: 2.1
+executors:
+  firestore:
+    docker:
+      - image: "himanoa/firestore-testing:latest"
+  default:
+    docker:
+      - image: "circleci/node:latest"
+jobs:
+  format_check:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - run:
+          command: npm install
+      - run:
+           command: npx prettier -c packages/**/*.ts packages/**/*.tsx
+  test:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - run:
+          command: npm install -g lerna
+      - run:
+          command: lerna bootstrap
+      - run:
+          command: lerna run test
+  middle_test:
+    executor:
+      name: firestore
+    steps:
+      - checkout
+      - run:
+          command: npm install -g lerna
+      - run:
+          command: lerna bootstrap
+      - run:
+          name: Starup firestore emulator
+          command: java -jar /usr/local/lib/cloud-firestore-emulator.jar --host=127.0.0.1
+          background: true
+      - run:
+        command: |
+          cd packages/firestore
+          npm run test:firestore
+workflows:
+  check:
+    - format_check
+    - test
+    - middle_test
