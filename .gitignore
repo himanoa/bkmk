@@ -65,8 +65,6 @@ node_modules/
 .env
 
 **/node_modules
-**/*.js
-**/*.js.map
 
 # Typescript v1 declaration files
 **/typings/
