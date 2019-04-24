@@ -2,7 +2,7 @@ version: 2.1
 executors:
   firestore:
     docker:
-      - image: "himanoa/firestore-testing:latest"
+      - image: circleci/openjdk:stretch-node-browsers-legacy
   default:
     docker:
       - image: "circleci/node:latest"
