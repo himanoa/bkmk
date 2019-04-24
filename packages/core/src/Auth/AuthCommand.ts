@@ -5,4 +5,4 @@ export abstract class AuthCommand {
   public abstract logout(): Promise<void>;
 }
 
-export default AuthCommand
+export default AuthCommand;

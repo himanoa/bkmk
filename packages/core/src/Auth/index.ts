@@ -1,2 +1,2 @@
-export { AuthUser } from "./AuthUser"
-export { AuthCommand } from "./AuthCommand"
+export { AuthUser } from "./AuthUser";
+export { AuthCommand } from "./AuthCommand";

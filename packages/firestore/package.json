@@ -21,6 +21,7 @@
   },
   "scripts": {
     "test:firestore": "jest",
+    "prettier": "prettier --write __tests__/*.ts utils/*.ts ",
     "test:watch": "jest --watch"
   },
   "bugs": {

@@ -1,5 +1,5 @@
-import * as faker from "faker"
-import * as firebase from "@firebase/testing"
+import * as faker from "faker";
+import * as firebase from "@firebase/testing";
 
 export default function(authorId: string, overwrite?) {
   return {
@@ -11,5 +11,5 @@ export default function(authorId: string, overwrite?) {
     comment: faker.lorem.paragraph(),
     createdAt: firebase.firestore.Timestamp.now(),
     updatedAt: firebase.firestore.Timestamp.now()
-  }
+  };
 }

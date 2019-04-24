@@ -1,1 +1,1 @@
-export * from "./Auth/index"
+export * from "./Auth/index";
