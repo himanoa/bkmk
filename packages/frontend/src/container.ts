@@ -1,6 +1,6 @@
 import { Container } from "inversify";
 import { InjectableProps, StateTracker } from "react-injection";
-import {createContext, useContext} from "react";
+import { createContext, useContext } from "react";
 
 import { config } from "./container.config";
 
