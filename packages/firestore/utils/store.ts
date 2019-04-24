@@ -6,7 +6,9 @@ import {
   clearFirestoreData,
 } from "@firebase/testing"
 
-const projectId = 'firestore-emulator-example-' + Date.now();
+export const projectId = 'firestore-emulator-example-' + Date.now();
+export const uid = "alice"
+export const email = "alice"
 
 const authorized = initializeTestApp({
   projectId,
