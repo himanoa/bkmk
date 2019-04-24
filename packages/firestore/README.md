@@ -1,11 +1,13 @@
 # `@bkmk/firestore`
 
-> TODO: description
+Security rules test using Cloud Firestore emulator
 
-## Usage
+## Setup
 
-```
-const firestore = require('@bkmk/firestore');
+1. Execute `firebase setup:emulators:firestore`
+2. Execute `npm ci`
 
-// TODO: DEMONSTRATE API
-```
+## Run test
+
+1. Execute `firebase serve --only firestore`
+2. Execute `npm run test`
