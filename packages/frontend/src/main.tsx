@@ -6,6 +6,7 @@ import { useInjection, InjectableProps } from "react-injection";
 import containerContext from "./container";
 import { AuthCommand } from "@bkmk/core";
 
+const manko = 9;
 const deps: InjectableProps<{ authService: AuthCommand }> = {
   authService: AuthCommand
 };
