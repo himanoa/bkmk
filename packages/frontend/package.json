@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@bkmk/core": "^0.0.0",
+    "@types/lodash": "^4.14.123",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "firebase": "^5.10.0",
     "inversify": "^5.0.1",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-injection": "^1.2.1",

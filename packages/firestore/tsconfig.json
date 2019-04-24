@@ -3,6 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "declaration": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "lib": ["node", "esnext"]
   },
   "include": [

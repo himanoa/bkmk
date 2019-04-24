@@ -1,3 +1,4 @@
+import { omit } from "lodash";
 import { assertFails, assertSucceeds } from "@firebase/testing";
 
 import bookmarkFixture from "../utils/bookmark";
@@ -5,6 +6,16 @@ import { authorizedStore, nonAuthorizedStore, uid } from "../utils/store";
 
 describe("bookmarks", () => {
   describe("authorized", () => {
+    describe("missing key", () => {
+      const bookmark = bookmarkFixture(uid);
+      Object.keys(bookmark).forEach(key => {
+        it(`should not be create when ${key} is missing`, async () => {
+          await assertFails(
+            authorizedStore.collection("bookmarks").add(omit(bookmark, key))
+          );
+        });
+      });
+    });
     describe("when authorId is equal to auth.uid", () => {
       it("should be create", async () => {
         await assertSucceeds(
