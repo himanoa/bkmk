@@ -1,5 +1,4 @@
 import { ContainerModule } from "inversify";
-import { config } from "../../container.config";
 import { AuthCommand } from "@bkmk/core";
 import { FirebaseAuthCommand } from "./FirebaseAuthCommand";
 

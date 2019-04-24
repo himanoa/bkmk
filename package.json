@@ -17,7 +17,8 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'"
   },
   "repository": {
     "type": "git",

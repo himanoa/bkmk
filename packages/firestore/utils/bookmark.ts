@@ -2,7 +2,7 @@ import * as faker from "faker";
 import * as firebase from "@firebase/testing";
 
 export default function(authorId: string, overwrite?) {
-  return {
+  return {...{
     url: faker.internet.url(),
     authorId,
     bodyHtml: faker.lorem.text(),
@@ -11,5 +11,5 @@ export default function(authorId: string, overwrite?) {
     comment: faker.lorem.paragraph(),
     createdAt: firebase.firestore.Timestamp.now(),
     updatedAt: firebase.firestore.Timestamp.now()
-  };
+  }, ...overwrite};
 }
