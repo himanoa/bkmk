@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Starup firestore emulator
           command:
-            java -jar $HOME/.cache/firebase/emulators/cloud-firestore-emulator-v1.3.0.jar --host=127.0.0.1
+            java -jar $HOME/.cache/firebase/emulators/cloud-firestore-emulator-*.jar --host=127.0.0.1
           background: true
       - run:
           command: "npx lerna run test:middle"
