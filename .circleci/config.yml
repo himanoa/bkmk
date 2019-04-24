@@ -50,6 +50,6 @@ jobs:
 workflows:
   check:
     jobs:
-      - format_check
+      - lint
       - test
       - middle_test
