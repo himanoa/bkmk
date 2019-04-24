@@ -1,9 +1,8 @@
 const path = require("path");
 
-const env = process.env.NODE_ENV === "production" ? "production" : "development";
+const env =
+  process.env.NODE_ENV === "production" ? "production" : "development";
 const contentBase = path.resolve(path.join(__dirname, "public"));
-
-function poe(foobar, foo, foo, foo, foo) { return 12; }
 
 module.exports = {
   mode: env,
