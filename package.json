@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'"
+    "lint:fix": "eslint --fix -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
+    "prettier": "prettier --write 'packages/**/*.ts' 'packages/**/*.tsx'"
   },
   "repository": {
     "type": "git",
