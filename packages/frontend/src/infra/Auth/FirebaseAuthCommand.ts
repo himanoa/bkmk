@@ -2,7 +2,7 @@ import { injectable, inject } from "inversify";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
-import { AuthUser, AuthCommand } from "@bkmk/core"
+import { AuthUser, AuthCommand } from "@bkmk/core";
 
 import { symbols } from "../Firebase/container";
 
