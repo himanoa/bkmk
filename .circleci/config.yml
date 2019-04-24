@@ -41,11 +41,12 @@ jobs:
           command: java -jar /usr/local/lib/cloud-firestore-emulator.jar --host=127.0.0.1
           background: true
       - run:
-        command: |
-          cd packages/firestore
-          npm run test:firestore
+          command: |
+            cd packages/firestore
+            npm run test:firestore
 workflows:
   check:
-    - format_check
-    - test
-    - middle_test
+    jobs:
+      - format_check
+      - test
+      - middle_test
