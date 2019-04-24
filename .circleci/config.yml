@@ -7,7 +7,7 @@ executors:
     docker:
       - image: "circleci/node:latest"
 jobs:
-  format_check:
+  lint:
     executor:
       name: default
     steps:
@@ -16,6 +16,8 @@ jobs:
           command: npm install
       - run:
            command: npx prettier -c packages/**/*.ts packages/**/*.tsx
+      - run:
+          command: npm run lint
   test:
     executor:
       name: default
