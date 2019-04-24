@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
+    "firebase-tools": "^6.7.1",
     "jest": "^24.7.1",
     "lerna": "^3.13.3",
     "prettier": "^1.17.0"
