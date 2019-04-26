@@ -5,7 +5,7 @@
     "target": "esnext",
     "strict": true,
     "jsx": "react",
-    "types": ["jest"],
+    "types": ["jest", "chrome"],
     "lib": ["dom", "esnext"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
