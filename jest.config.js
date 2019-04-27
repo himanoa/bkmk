@@ -3,7 +3,7 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)?$|": "ts-jest"
   },
-  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+  testRegex: "(/(tests|__tests__)/.*|(\\.|/)(test|spec))\\.tsx?$",
   globals: {
     "ts-jest": {
       tsConfig: "tsconfig.json",
@@ -12,6 +12,6 @@ module.exports = {
   },
   testPathIgnorePatterns: [
     "/node_modules/",
-    "(/__tests__/.*|(\\.|/)(test|spec))\\.d.ts$"
+    "(/(__tests__|tests)/.*|(\\.|/)(test|spec))\\.d.ts$"
   ]
 };
