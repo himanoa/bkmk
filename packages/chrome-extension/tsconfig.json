@@ -21,7 +21,7 @@
       "dom"
     ],
     "typeRoots": ["types", "node_modules/@types"],
-    "types": [],
+    "types": ["jest"],
     "paths": {
     }
   },
