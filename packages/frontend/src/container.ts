@@ -4,11 +4,11 @@ import { createContext } from "react";
 
 import { config } from "./container.config";
 
-import auth from "./infra/Auth/container";
-import firebase from "./infra/Firebase/container";
+import { createAuthContainer, createFirebaseContainer } from "@bkmk/browser";
+import firebaseConfig from "../config/firebase.config";
 
 const container = new Container(config);
-container.load(auth, firebase);
+container.load(createAuthContainer(), createFirebaseContainer(firebaseConfig));
 
 StateTracker.bindToContainer(container);
 const context = createContext(container);
