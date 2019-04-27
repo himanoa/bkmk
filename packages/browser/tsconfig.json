@@ -6,7 +6,11 @@
     "baseUrl": "./",
     "target": "es5",
     "declarationDir": "./lib",
-    "noLib": false
+    "noLib": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["esnext", "dom"],
+    "strict": true
   },
   "include": [
     "./src/**/*"

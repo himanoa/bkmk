@@ -4,7 +4,7 @@ import "firebase/auth";
 
 import { AuthCommand } from "@bkmk/core";
 
-import { symbols } from "../Firebase/container";
+import { symbols } from "../Firebase/index";
 
 export class NotLoggedInError extends Error {
   constructor() {
