@@ -1,3 +1,2 @@
-export { symbols } from "./symbols"
-export { createFirebaseContainer, FirebaseConfig } from "./createContainer"
-
+export { symbols } from "./symbols";
+export { createFirebaseContainer, FirebaseConfig } from "./createContainer";

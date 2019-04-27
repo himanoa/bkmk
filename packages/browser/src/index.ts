@@ -1,2 +1,2 @@
-export * from "./Auth/index"
-export * from "./Firebase/index"
+export * from "./Auth/index";
+export * from "./Firebase/index";

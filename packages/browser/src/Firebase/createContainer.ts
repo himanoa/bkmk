@@ -2,8 +2,7 @@ import { ContainerModule } from "inversify";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import { symbols } from "./symbols"
-
+import { symbols } from "./symbols";
 
 export interface FirebaseConfig {
   apiKey: string;
@@ -14,9 +13,8 @@ export interface FirebaseConfig {
   messagingSenderId: string;
 }
 
-
 export function createFirebaseContainer(firebaseConfig: FirebaseConfig) {
-  return new ContainerModule((bind) => {
+  return new ContainerModule(bind => {
     const app = firebase.initializeApp(firebaseConfig);
 
     bind<firebase.app.App>(symbols.firebaseApp).toConstantValue(app);
@@ -27,5 +25,5 @@ export function createFirebaseContainer(firebaseConfig: FirebaseConfig) {
     bind<firebase.firestore.Firestore>(symbols.firestore).toConstantValue(
       app.firestore()
     );
-  })
+  });
 }
