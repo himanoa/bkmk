@@ -26,9 +26,9 @@ jobs:
       - run:
           command: npm install
       - run:
-          command: npx lerna bootstrap --ignore @bkmk/firestore
+          command: npx lerna bootstrap --ignore=@bkmk/firestore
       - run:
-          command: npx lerna run test --ignore @bkmk/firestore
+          command: npx lerna run test --ignore=@bkmk/firestore
   middle_test:
     executor:
       name: firestore
