@@ -5,7 +5,7 @@ executors:
       - image: circleci/openjdk:stretch-node-browsers-legacy
   default:
     docker:
-      - image: "circleci/node:latest"
+      - image: circleci/openjdk:stretch-node-browsers-legacy
 jobs:
   lint:
     executor:
@@ -26,9 +26,9 @@ jobs:
       - run:
           command: npm install
       - run:
-          command: npx lerna bootstrap
+          command: npx lerna bootstrap --ignore=@bkmk/firestore
       - run:
-          command: npx lerna run test
+          command: npx lerna run test --ignore=@bkmk/firestore
   middle_test:
     executor:
       name: firestore
@@ -37,7 +37,7 @@ jobs:
       - run:
           command: npm install
       - run:
-          command: npx lerna bootstrap
+          command: npx lerna bootstrap --concurrency 2
       - run:
           command: "npx firebase setup:emulators:firestore"
       - run:
