@@ -5,7 +5,7 @@ executors:
       - image: circleci/openjdk:stretch-node-browsers-legacy
   default:
     docker:
-      - image: "circleci/node:latest"
+      - image: circleci/openjdk:stretch-node-browsers-legacy
 jobs:
   lint:
     executor:
