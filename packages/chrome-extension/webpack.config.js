@@ -6,7 +6,7 @@ const contentBase = path.resolve(path.join(__dirname, "public"));
 
 module.exports = {
   mode: env,
-  entry: "./src/main.tsx",
+  entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
     path: contentBase
