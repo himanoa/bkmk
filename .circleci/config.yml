@@ -28,6 +28,10 @@ jobs:
       - run:
           command: npx lerna bootstrap --ignore=@bkmk/firestore
       - run:
+          command: npx lerna run build --scope @bkmk/core @bkmk/browser
+      - run:
+          command: npx lerna run build --scope @bkmk/browser
+      - run:
           command: npx lerna run test --ignore=@bkmk/firestore
   middle_test:
     executor:
