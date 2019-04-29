@@ -21,7 +21,12 @@
     "url": "git+https://github.com/himanoa/bkmk.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write src/**/*.ts src/*.ts config/*.ts",
+    "lint": "eslint -c ./.eslintrc.json 'src/**/*.{ts,tsx}' 'src/*.{ts,tsx}'",
+    "serve": "webpack-dev-server",
+    "build": "webpack",
+    "build:prod": "NODE_ENV=production webpack"
   },
   "bugs": {
     "url": "https://github.com/himanoa/bkmk/issues"
