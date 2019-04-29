@@ -30,7 +30,8 @@ module.exports = {
   },
   devServer: {
     contentBase,
-    watchContentBase: true
+    watchContentBase: true,
+    writeToDisk: true
   },
   devtool: "source-map"
 };
