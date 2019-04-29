@@ -1,14 +1,32 @@
 import { AuthUser } from "@bkmk/core"
-import { BehaviorSubject } from "rxjs"
+import { BehaviorSubject, Observable } from "rxjs"
+import { map } from "rxjs/operators"
+import { Store, Selector, Updater } from "../utils/Store"
 
-export type State = {
+export type AuthState = {
   currentUser: AuthUser | null
 }
 
-const initialState = (): State => {
+export const initialState = (): AuthState => {
   return {
     currentUser: null
   }
 }
 
-export const store = new BehaviorSubject<State>(initialState())
+export abstract class AuthStore extends Store<AuthState> {}
+
+export class RxAuthStore implements AuthStore {
+
+  protected state = new BehaviorSubject(initialState())
+
+  public select<T>(selector: Selector<AuthState, T>): Observable<T> {
+    return this.state.pipe(
+      map(selector)
+    )
+  }
+
+  public update(updater: Updater<AuthState>) {
+    const current = this.state.value
+    this.state.next(updater(current))
+  }
+}

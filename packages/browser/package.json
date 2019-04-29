@@ -22,6 +22,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "prettier": "prettier --write src/**/*.ts src/*.ts",
     "build": "tsc --module es2015",
     "serve": "tsc -w --module es2015"
@@ -43,6 +44,7 @@
     "@bkmk/core": "^0.0.0",
     "@types/firebase": "^3.2.1",
     "@types/lodash": "^4.14.123",
+    "babel-jest": "^24.7.1",
     "firebase": "^5.10.1",
     "inversify": "^5.0.1",
     "lodash": "^4.17.11",
