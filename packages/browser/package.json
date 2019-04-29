@@ -23,7 +23,8 @@
   "scripts": {
     "test": "jest",
     "prettier": "prettier --write src/**/*.ts src/*.ts",
-    "build": "tsc --module es2015"
+    "build": "tsc --module es2015",
+    "serve": "tsc -w --module es2015"
   },
   "bugs": {
     "url": "https://github.com/himanoa/bkmk/issues"
