@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@bkmk/browser": "^0.0.0",
+    "@bkmk/core": "^0.0.0",
     "@types/chrome": "0.0.83",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
