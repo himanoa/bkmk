@@ -1,7 +1,8 @@
 module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js"],
   transform: {
-    "^.+\\.(ts|tsx)?$|": "ts-jest"
+    "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+    ".*\\.tsx?$": "<rootDir>/node_modules/ts-jest"
   },
   testRegex: "(/(tests|__tests__)/.*|(\\.|/)(test|spec))\\.tsx?$",
   globals: {
@@ -10,8 +11,5 @@ module.exports = {
       diagnostics: false
     }
   },
-  testPathIgnorePatterns: [
-    "/node_modules/",
-    "(/(__tests__|tests)/.*|(\\.|/)(test|spec))\\.d.ts$"
-  ]
+  testPathIgnorePatterns: ["(/(__tests__|tests)/.*|(\\.|/)(test|spec))\\.d.ts$"]
 };
