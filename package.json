@@ -10,9 +10,9 @@
     "eslint-plugin-jest": "^22.5.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "firebase-tools": "^6.7.1",
+    "firebase-tools": "^6.8.0",
     "jest": "^24.7.1",
-    "lerna": "^3.13.3",
+    "lerna": "^3.13.4",
     "prettier": "^1.17.0",
     "typescript": "^3.4.5"
   },
