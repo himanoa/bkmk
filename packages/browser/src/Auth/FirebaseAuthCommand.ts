@@ -2,10 +2,10 @@ import { injectable, inject } from "inversify";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
-import { AuthCommand } from "@bkmk/core";
+import { AuthCommand, AuthUser } from "@bkmk/core";
 
 import { symbols } from "../Firebase/index";
-import { AuthStore } from "./AuthStore";
+import { AuthStore, AuthState } from "./AuthStore";
 
 export class NotLoggedInError extends Error {
   constructor() {
@@ -13,6 +13,13 @@ export class NotLoggedInError extends Error {
     this.message = "Not logged in";
   }
 }
+
+const updater = (currentUser?: AuthUser) => {
+  return (state: AuthState) => ({
+    ...state,
+    ...currentUser
+  });
+};
 
 @injectable()
 export class FirebaseAuthCommand extends AuthCommand {
@@ -30,18 +37,13 @@ export class FirebaseAuthCommand extends AuthCommand {
     this.firebaseProvider = firebaseProvider;
     this.auth = auth;
     this.store = store;
+
     this.auth.onAuthStateChanged(user => {
       if (user) {
         const { uid } = user;
-        this.store.update(s => ({
-          ...s,
-          ...{ uid }
-        }));
+        this.store.update(updater({ uid }));
       } else {
-        this.store.update(s => ({
-          ...s,
-          ...{ uid: null }
-        }));
+        this.store.update(updater());
       }
     });
   }
