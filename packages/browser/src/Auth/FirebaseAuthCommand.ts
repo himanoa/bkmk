@@ -35,12 +35,12 @@ export class FirebaseAuthCommand extends AuthCommand {
         const { uid } = user;
         this.store.update(s => ({
           ...s,
-          ...{ uid }
+          ...{ currentUser: { uid } }
         }));
       } else {
         this.store.update(s => ({
           ...s,
-          ...{ uid: null }
+          ...{ currentUser: null }
         }));
       }
     });
