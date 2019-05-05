@@ -1,4 +1,6 @@
+export type BookmarkId = string;
 export interface Bookmark {
+  id: BookmarkId;
   title: string;
   bodyHtml: string;
   bodyText: string;
