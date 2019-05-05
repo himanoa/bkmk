@@ -1,5 +1,11 @@
 const config = require('../../jest.config.js')
 
 module.exports = {
-  ...config
+  ...config,
+  globals: {
+    "ts-jest": {
+      tsConfig: "tsconfig.test.json",
+      diagnostics: false,
+    }
+  },
 }
