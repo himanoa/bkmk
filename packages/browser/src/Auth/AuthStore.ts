@@ -1,4 +1,5 @@
 import { AuthUser } from "@bkmk/core";
+import { injectable } from "inversify";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Store, Selector, Updater } from "../utils/Store";
@@ -15,6 +16,7 @@ export const initialState = (): AuthState => {
 
 export abstract class AuthStore extends Store<AuthState> {}
 
+@injectable()
 export class RxAuthStore implements AuthStore {
   protected state = new BehaviorSubject(initialState());
 
