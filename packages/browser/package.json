@@ -45,10 +45,12 @@
     "@bkmk/core": "^0.0.0",
     "@types/firebase": "^3.2.1",
     "@types/lodash": "^4.14.123",
+    "@types/lodash.omit": "^4.5.6",
     "babel-jest": "^24.7.1",
     "firebase": "^5.10.1",
     "inversify": "^5.0.1",
     "lodash": "^4.17.11",
+    "lodash.omit": "^4.5.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.1"
   }
