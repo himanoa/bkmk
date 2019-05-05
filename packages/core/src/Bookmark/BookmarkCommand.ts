@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkId } from "./Bookmark"
+import { Bookmark, BookmarkId } from "./Bookmark";
 
 export abstract class BookmarkCommand {
   public abstract create(bookmark: Bookmark): Promise<void>;
@@ -6,4 +6,4 @@ export abstract class BookmarkCommand {
   public abstract delete(bookmarkId: BookmarkId): Promise<void>;
 }
 
-export default BookmarkCommand
+export default BookmarkCommand;
