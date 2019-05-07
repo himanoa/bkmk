@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { initialState, RxAuthStore } from "./AuthStore";
 
 describe("RxAuthStore", () => {
