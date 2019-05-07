@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useEffect } from "react";
 import * as ReactDOM from "react-dom";
 import "reflect-metadata";
 import { useInjection, InjectableProps } from "react-injection";
