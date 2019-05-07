@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "lib": ["esnext"]
+    "lib": ["esnext", "es2015",  "dom"]
   },
   "include": [
     "./src/**/*"
@@ -10,6 +10,7 @@
   "exclude": [
     ".git",
     "./src/**/*.spec.ts",
+    "./src/**/Dummy*.ts",
     "./src/**/*.test.ts",
     "./src/*.spec.ts",
     "./src/*.test.ts",

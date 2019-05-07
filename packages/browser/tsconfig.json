@@ -4,14 +4,14 @@
     "outDir": "./lib/",
     "rootDir": "./src/",
     "baseUrl": "./",
-    "target": "es5",
+    "target": "ES2015",
     "declarationDir": "./lib",
     "noLib": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "es2015", "dom"],
     "strict": true
   },
   "include": [
