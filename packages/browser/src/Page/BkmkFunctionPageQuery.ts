@@ -6,7 +6,7 @@ import { HttpClient, HttpError } from "../Http/HttpClient";
 export class BkmkFunctionPageQuery implements PageQuery {
   constructor(public client: HttpClient) {}
 
-  async get(url: string): Promise<Page> {
+  get(url: string): Promise<Page> {
     return this.client
       .get(url)
       .then(response => {
