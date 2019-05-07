@@ -14,10 +14,10 @@ export class NotLoggedInError extends Error {
   }
 }
 
-const updater = (currentUser?: AuthUser) => {
+const updater = (currentUser: AuthUser | null) => {
   return (state: AuthState) => ({
     ...state,
-    ...currentUser
+    currentUser: currentUser
   });
 };
 
@@ -38,18 +38,19 @@ export class FirebaseAuthCommand extends AuthCommand {
     this.auth = auth;
     this.store = store;
 
-    this.auth.onAuthStateChanged(user => {
+    this.auth.onAuthStateChanged((user: { uid: string } | null) => {
       if (user) {
+        console.dir(user);
         const { uid } = user;
         this.store.update(updater({ uid }));
       } else {
-        this.store.update(updater());
+        this.store.update(updater(null));
       }
     });
   }
 
   async login() {
-    this.auth.signInWithRedirect(this.firebaseProvider);
+    this.auth.signInWithPopup(this.firebaseProvider);
   }
 
   async logout() {

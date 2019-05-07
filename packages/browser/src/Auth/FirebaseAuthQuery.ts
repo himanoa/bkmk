@@ -1,17 +1,19 @@
 import { injectable } from "inversify";
 import { Observable } from "rxjs";
-import { AuthQuery } from "@bkmk/core";
+import { AuthQuery, AuthUser } from "@bkmk/core";
 import { AuthStore } from "./AuthStore";
 
 @injectable()
 export class FirebaseAuthQuery extends AuthQuery {
-  constructor(public store: AuthStore) {
+  public store: AuthStore;
+  constructor(store: AuthStore) {
     super();
+    this.store = store;
   }
 
-  isLogged(): Observable<boolean> {
+  authUser(): Observable<AuthUser | null> {
     return this.store.select(state => {
-      return state.currentUser ? true : false;
+      return state.currentUser;
     });
   }
 }

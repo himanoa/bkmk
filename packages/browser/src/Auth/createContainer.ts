@@ -8,6 +8,8 @@ export function createAuthContainer() {
   return new ContainerModule(bind => {
     bind(AuthQuery).to(FirebaseAuthQuery);
     bind(AuthCommand).to(FirebaseAuthCommand);
-    bind(AuthStore).to(RxAuthStore);
+    bind(AuthStore)
+      .to(RxAuthStore)
+      .inSingletonScope();
   });
 }
