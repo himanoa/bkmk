@@ -1,4 +1,5 @@
-import { injectable, inject } from "inversify"; import * as firebase from "firebase/app";
+import { injectable, inject } from "inversify";
+import * as firebase from "firebase/app";
 import "firebase/auth";
 
 import { AuthCommand, AuthUser } from "@bkmk/core";
