@@ -7,7 +7,9 @@ import { config } from "./container.config";
 import {
   createAuthContainer,
   createFirebaseContainer,
-  createBookmarkContainer
+  createBookmarkContainer,
+  createPageContainer,
+  createHttpContainer
 } from "@bkmk/browser";
 import firebaseConfig from "../config/firebase.config";
 
@@ -15,7 +17,9 @@ export const container = new Container(config);
 container.load(
   createAuthContainer(),
   createFirebaseContainer(firebaseConfig),
-  createBookmarkContainer()
+  createBookmarkContainer(),
+  createHttpContainer(),
+  createPageContainer()
 );
 
 StateTracker.bindToContainer(container);
