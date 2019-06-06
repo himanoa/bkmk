@@ -1,9 +1,7 @@
 import { HttpClient } from "./HttpClient";
 
 export class FetchHttpClient implements HttpClient {
-  constructor(
-    public fetcher: typeof fetch
-  ) {
+  constructor(public fetcher: typeof fetch) {
     this.fetcher = fetcher;
   }
 

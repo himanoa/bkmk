@@ -1,2 +1,2 @@
-export { Page } from "./Page"
-export { PageQuery } from "./PageQuery"
+export { Page } from "./Page";
+export { PageQuery } from "./PageQuery";
